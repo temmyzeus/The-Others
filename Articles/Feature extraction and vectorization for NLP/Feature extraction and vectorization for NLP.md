@@ -1,10 +1,10 @@
-# Feature extraction and vectorization for NLP
+# Feature Extraction and Vectorization for NLP
 
 [^Subtitle]: Feature Extraction methods for Natural Language Processing and Information Retrieval
 
 Natural language processing is a sub-field of machine learning that deals with helping machine and computers understand and comprehend natural language spoken by humans. Machine learning models and algorithms as we know them, needs our input features to be represent in numbers, so "How do we represent language in numerical terms?".  The beauty about natural language vectorization is that it also helps us as humans to understand the nature of the corpus we're dealing with in general.
 
-We deal with this incrementally, understanding basic terms before touch on some basic feature vectorization methods and coding them from scratch.
+We deal with this incrementally, understanding basic terms before we touch on some basic feature vectorization methods and coding them from scratch.
 
 [TOC]
 
@@ -14,23 +14,25 @@ We deal with this incrementally, understanding basic terms before touch on some 
 
 This is a collection of various documents and is mostly used to refer to the totality of all text available to us in our task.
 
-![](/home/temmyzeus/Documents/Articles/Feature extraction and vectorization for NLP/corpus.png)
+![Corpus Image](./images/corpus.png)
 
 ## Term
 
-A term commonly  referred to as words in our text, is a collection of characters. Example: a collection of b, o, y with give the word "boy" and a collection of characters "s, l, o, w" will give the word "slow".
+A term commonly  referred to as words or tokens (if it's word-level tokenization) in our text, is a collection of characters. Example: a collection of b, o, y with give the word "boy" and a collection of characters "s, l, o, w" will give the word "slow".
 
-![](/home/temmyzeus/Documents/Articles/Feature extraction and vectorization for NLP/terms.png)
+To Do: Check if while using Char-Level Tokenization (Don't want to say Char-Level RNN n shi), tokens can be referred to as terms.
+
+![Terms Image](./images/terms.png)
 
 ## Documents
 
 A document is a collection of terms, either to form a couple of texts, phrase, sentence, one or more paragraphs.
 
-![](/home/temmyzeus/Documents/Articles/Feature extraction and vectorization for NLP/documents.png)
+![Documents Image](./images/documents.png)
 
 # Basic NLP Features Vectorization
 
-Let's create a abstract class for all our feature vectorization classes to sub-class from.
+Let's create a abstrfeature_extraction_nlp.pyact class for all our feature vectorization classes to sub-class from.
 
 
 
