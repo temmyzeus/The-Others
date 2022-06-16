@@ -1,9 +1,8 @@
-# import abstact class
 from abc import ABCMeta, abstractmethod
 from collections import Counter, defaultdict
 
 
-class NLPFeatureVec(metaclass=ABCMeta):
+class NLPFeatureVectorizer(metaclass=ABCMeta):
     """Base class for NLP feature vectorization."""
 
     def __init__(self, corpus: list[list[str]]) -> None:
@@ -14,7 +13,7 @@ class NLPFeatureVec(metaclass=ABCMeta):
         """
         self.corpus = corpus
         self.vocab = Counter()
-    
+
     @abstractmethod
     def fit(self) -> None:
         self.get_vocab(self.vocab)
@@ -25,11 +24,12 @@ class NLPFeatureVec(metaclass=ABCMeta):
         pass
 
     def get_vocab(self, vocab: Counter):
+        """Get vocabulary"""
         for doc in self.corpus:
             self.vocab.update(doc)
 
 
-class TermFrequency():
+class TermFrequency:
     vocab = Counter()
 
     def __init__(self, corpus: list[list[str]]) -> None:
@@ -39,7 +39,7 @@ class TermFrequency():
             corpus with all docuemnts tokenized.
         """
         self.corpus = corpus
-    
+
     def fit(self) -> None:
         self.get_vocab(self.vocab)
 
@@ -54,6 +54,7 @@ class TermFrequency():
         for doc in self.corpus:
             self.vocab.update(doc)
 
+
 class DocumentFrequency(NLPFeatureVec):
     def __init__(self) -> None:
         """
@@ -63,7 +64,7 @@ class DocumentFrequency(NLPFeatureVec):
         """
         self.corpus = corpus
         # self.vocab = Counter()
-    
+
     normalize = lambda self, x: x.lower().strip()
 
     def fit(self, corpus: list[list[str]]) -> None:
@@ -85,14 +86,15 @@ class DocumentFrequency(NLPFeatureVec):
     #         doc = map(self.normalize, doc)
     #         self.vocab.update(doc)
 
+
 # class InverseDocumentFrequency(...):
 #     pass
 
 # google best string to test document frequency
 corpus: list[list[str]] = [
-    ["The", "brown", "cat", "jumped", "the", "wall", "higher"," than", "the", "dog"],
+    ["The", "brown", "cat", "jumped", "the", "wall", "higher", " than", "the", "dog"],
     ["Bingo", "is", "such", "a", "nice", "dog"],
-    ["The", "wages", "of", "sin", "is", "death"]
+    ["The", "wages", "of", "sin", "is", "death"],
 ]
 
 # tf = TermFrequency(corpus)
